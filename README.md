@@ -10,6 +10,8 @@ Este algoritmo é ótimo para classificação de textos com base em categorias p
 
 Obs: A opção "Inclassificavel" é totalmente opcional e se informada, deve receber um treino VAZIO, pois ela serve como um "ESCAPE" para o algoritmo, ou seja, no caso do algoritmo não conseguir classificar o texto (por faltar dados de treino [NOTA: É necessário muitos dados de treino para que o algoritmo comece a categorizar corretamente caso escolha colocar essa função de ESCAPE, com poucos dados, para não errar muito o algoritmo irá categorizar praticamente todos os textos nessa categoria!]) ele irá classificar este texto com essa opção vazia. Caso ela não exista, o classificador tentará errar menos e retorna-rá uma das 3 outras categorias restantes ("Positivo", "Negativo" ou "Neutro"), mas provavelmnete o resultado será impreciso.
 
+Obs2: É possivel cadastrar "N" categorias com nomencaturas diferentes, as citadas aqui são apenas para fins de exemplo.
+
 ## Chamada da Classe
 
 ```php
@@ -62,19 +64,20 @@ Obs: A opção "Inclassificavel" é totalmente opcional e se informada, deve rec
     $classification = new NavyBayes();
 
     $categories = Array(
-        "Positivo" => "como ele é lindo, menino de ouro!, que fruta deliciosa",
-        "Negativo" => "ele é feio demais!, se ferrou!, que delícia de abobora",
-        "Neutro" => "isso é interessante, isso me parece sem graça",
-        //"Inclassificavel" => "" //Optional
+        "Sim" => "como ele é lindo, menino de ouro!, que fruta deliciosa",
+        "Nao" => "ele é feio demais!, se ferrou!, que delícia de abobora",
+        "Talvez" => "isso é interessante, isso me parece sem graça",
+        "Pode_ser" => "TREINO AQUI",
+        "Nunca" => "TREINO AQUI",
+        "Sempre" => "TREINO AQUI",
     );
 
-    $classification->learn($categories["Positivo"], "Positivo");
-    $classification->learn($categories["Negativo"], "Negativo");
-    $classification->learn($categories["Neutro"], "Neutro");
-    //$classification->learn($categories["Inclassificavel"], "Inclassificavel"); //Optional
-
-    echo $classification->categorize("O João é muito maravilhoso!");
-    echo $classification->categorize("Meu Deus, como esse menino é muito burro!");
+    $classification->learn($categories["Sim"], "Sim");
+    $classification->learn($categories["Nao"], "Não");
+    $classification->learn($categories["Talvez"], "Talvez");
+    $classification->learn($categories["Pode_ser"], "Pode ser");
+    $classification->learn($categories["Nunca"], "Nunca");
+    $classification->learn($categories["Sempre"], "Sempre");
 ```
 
 Aproveitem!
