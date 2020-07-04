@@ -278,3 +278,5 @@ class NavyBayes {
         return ($frequenciaPalavras + 1) / ($quantidadePalavras + $this->tamanhoVocabulario);
     }
 }
+
+?>
