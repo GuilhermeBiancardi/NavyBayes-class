@@ -10,7 +10,7 @@ Este algoritmo é ótimo para classificação de textos com base em categorias p
 
 Obs: A opção "Inclassificavel" é totalmente opcional e se informada, deve receber um treino VAZIO, pois ela serve como um "ESCAPE" para o algoritmo, ou seja, no caso do algoritmo não conseguir classificar o texto (por faltar dados de treino [NOTA: É necessário muitos dados de treino para que o algoritmo comece a categorizar corretamente caso escolha colocar essa função de ESCAPE, com poucos dados, para não errar muito o algoritmo irá categorizar praticamente todos os textos nessa categoria!]) ele irá classificar este texto com essa opção vazia. Caso ela não exista, o classificador tentará errar menos e retorna-rá uma das 3 outras categorias restantes ("Positivo", "Negativo" ou "Neutro"), mas provavelmnete o resultado será impreciso.
 
-Obs2: É possivel cadastrar "N" categorias com nomencaturas diferentes, as citadas aqui são apenas para fins de exemplo.
+Obs2: É possivel cadastrar "N" categorias com nomenclaturas diferentes, as citadas aqui são apenas para fins de exemplo. O mínimo exigido para o funcionamento correto do classificador é 2 categorias.
 
 ## Chamada da Classe
 
